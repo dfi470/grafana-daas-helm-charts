@@ -1,15 +1,9 @@
 global:
-  image:
-    # -- Overrides the Docker registry globally for all images
-    registry: null
-  # -- Overrides the priorityClassName for all pods
-  priorityClassName: null
-  # -- configures cluster domain ("cluster.local" by default)
-  clusterDomain: "cluster.local"
-  # -- configures DNS service name
-  dnsService: "kube-dns"
-  # -- configures DNS service namespace
-  dnsNamespace: "kube-system"
+  dnsService: rke2-coredns-rke2-coredns
+  dnsNamespace: kube-system
+  clusterDomain: cluster.local
+  nodeSelector:
+     daas.teliacompany.net/type: application_node
 
 # -- Overrides the chart's name
 nameOverride: null
